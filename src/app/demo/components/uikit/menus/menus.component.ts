@@ -1,36 +1,39 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MegaMenuItem, MenuItem } from 'primeng/api';
 
 @Component({
     templateUrl: './menus.component.html',
-    encapsulation: ViewEncapsulation.None
+    styles: [`
+        :host ::ng-deep .p-menubar-root-list {
+            flex-wrap: wrap;
+        }
+    `]
 })
 export class MenusComponent implements OnInit {
 
-    breadcrumbItems!: MenuItem[];
+    breadcrumbItems: MenuItem[] = [];
 
-    tieredItems!: MenuItem[];
+    tieredItems: MenuItem[] = [];
 
-    items!: MenuItem[];
+    items: MenuItem[] = [];
 
-    routeItems!: MenuItem[];
+    routeItems: MenuItem[] = [];
 
-    megaMenuItems!: MegaMenuItem[];
+    megaMenuItems: MegaMenuItem[] = [];
 
-    panelMenuItems!: MenuItem[];
+    panelMenuItems: MenuItem[] = [];
 
-    stepsItems!: MenuItem[];
+    stepsItems: MenuItem[] = [];
 
-    slideItems!: MenuItem[];
+    slideItems: MenuItem[] = [];
 
-    menuItems!: MenuItem[];
+    menuItems: MenuItem[] = [];
 
-    plainMenuItems!: MenuItem[];
+    plainMenuItems: MenuItem[] = [];
 
     pageIndex: number = 0;
 
     ngOnInit() {
-
         this.tieredItems = [
             {
                 label: 'Customers',
@@ -469,4 +472,5 @@ export class MenusComponent implements OnInit {
             }
         ];
     }
+
 }
